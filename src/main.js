@@ -20,8 +20,6 @@ updateRedValue()
 updateGreenValue()
 updateBlueValue()
 
-updateSwatch()
-
 function updateRedValue() {
   updateValues(redSlider.value, redValue, redHexValue)
 }
