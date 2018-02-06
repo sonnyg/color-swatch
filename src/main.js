@@ -14,22 +14,23 @@ const redHexValue = document.getElementById('redHexValue')
 const greenHexValue = document.getElementById('greenHexValue')
 const blueHexValue = document.getElementById('blueHexValue')
 
-const swatch = document.getElementById('swatch')
-
 updateRedValue()
 updateGreenValue()
 updateBlueValue()
 
 function updateRedValue() {
   updateValues(redSlider.value, redValue, redHexValue)
+  updateProperty('red', redSlider.value)
 }
 
 function updateGreenValue() {
   updateValues(greenSlider.value, greenValue, greenHexValue)
+  updateProperty('green', greenSlider.value)
 }
 
 function updateBlueValue() {
   updateValues(blueSlider.value, blueValue, blueHexValue)
+  updateProperty('blue', blueSlider.value)
 }
 
 function updateValues(sliderValue, textLabel, hexLabel) {
@@ -37,23 +38,8 @@ function updateValues(sliderValue, textLabel, hexLabel) {
 
   textLabel.innerText = value
   hexLabel.innerText = value.toString(16)
-
-  updateSwatch()
 }
 
-function updateSwatch() {
-  const styleSheet = document.styleSheets[0]
-  const rules = styleSheet.cssRules || styleSheet.rules
-  const color = `rgb(${redSlider.value}, ${greenSlider.value}, ${blueSlider.value})`
-
-  // console.log(`updating color swatch: ${color}`)
-
-  // find our rule
-  for (var index = 0; index < rules.length; index += 1) {
-    var rule = rules[index]
-
-    if (rule.selectorText === '#swatch') {
-      rule.style.backgroundColor = color
-    }
-  }
+function updateProperty(id, value) {
+  document.documentElement.style.setProperty(`--${id}`, value);
 }
