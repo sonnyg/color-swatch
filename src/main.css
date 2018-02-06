@@ -12,3 +12,10 @@ span {
   padding: 2 12;  /* top bottom, left right */
   display: inline-block;
 }
+
+.swatch {
+  border: 4px solid #888;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+}
