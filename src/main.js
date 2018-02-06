@@ -10,18 +10,31 @@ const redValue = document.getElementById('redValue')
 const greenValue = document.getElementById('greenValue')
 const blueValue = document.getElementById('blueValue')
 
+const redHexValue = document.getElementById('redHexValue')
+const greenHexValue = document.getElementById('greenHexValue')
+const blueHexValue = document.getElementById('blueHexValue')
+
 updateRedValue()
 updateGreenValue()
 updateBlueValue()
 
 function updateRedValue() {
-  redValue.innerText = redSlider.value
+  const value = redSlider.value
+
+  redValue.innerText = value
+  redHexValue.innerText = Math.abs(value).toString(16)
 }
 
 function updateGreenValue() {
-  greenValue.innerText = greenSlider.value
+  const value = greenSlider.value
+
+  greenValue.innerText = value
+  greenHexValue.innerText = Math.abs(value).toString(16)
 }
 
 function updateBlueValue() {
-  blueValue.innerText = blueSlider.value
+  const value = blueSlider.value
+
+  blueValue.innerText = value
+  blueHexValue.innerText = Math.abs(value).toString(16)
 }

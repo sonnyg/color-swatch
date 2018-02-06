@@ -6,3 +6,9 @@ ul {
   list-style: none;
   line-height: 2em;
 }
+
+span {
+  width: 3em;
+  padding: 2 12;  /* top bottom, left right */
+  display: inline-block;
+}
