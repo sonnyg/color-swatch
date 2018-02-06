@@ -23,28 +23,22 @@ updateBlueValue()
 updateSwatch()
 
 function updateRedValue() {
-  const value = redSlider.value
-
-  redValue.innerText = value
-  redHexValue.innerText = Math.abs(value).toString(16)
-
-  updateSwatch()
+  updateValues(redSlider.value, redValue, redHexValue)
 }
 
 function updateGreenValue() {
-  const value = greenSlider.value
-
-  greenValue.innerText = value
-  greenHexValue.innerText = Math.abs(value).toString(16)
-
-  updateSwatch()
+  updateValues(greenSlider.value, greenValue, greenHexValue)
 }
 
 function updateBlueValue() {
-  const value = blueSlider.value
+  updateValues(blueSlider.value, blueValue, blueHexValue)
+}
 
-  blueValue.innerText = value
-  blueHexValue.innerText = Math.abs(value).toString(16)
+function updateValues(sliderValue, textLabel, hexLabel) {
+  const value = Math.abs(sliderValue)
+
+  textLabel.innerText = value
+  hexLabel.innerText = value.toString(16)
 
   updateSwatch()
 }
