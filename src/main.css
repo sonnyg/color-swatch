@@ -13,7 +13,7 @@ span {
   display: inline-block;
 }
 
-.swatch {
+#swatch {
   border: 4px solid #888;
   border-radius: 5px;
   text-align: center;
